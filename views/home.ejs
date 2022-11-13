@@ -1,0 +1,37 @@
+<%- include("partials/header"); -%>
+    <h1 style="text-align: center;">HOME</h1>
+
+    <% for(var i=0; i<blogs.length; i++){ %>
+
+        <form action="/delete" method="post">
+            <div class="card">
+                <div
+                    style="background-color: rgb(227, 224, 221); margin-left: 60px; margin-right: 60px; margin-bottom:5px ;  border: 2px solid rgb(58, 58, 66); border-radius: 10px;">
+                    <div class="card-body">
+
+                        <button type="submit" name="toBeDeleted" value= "<%=blogs[i]._id %>" style = "float:right" >Delete</button>
+                        <p style="text-align: center; padding-top:8px"><b>
+                                <%=blogs[i].title_of_blog%>
+                            </b></p>
+                        <% if(blogs[i].content_of_blog.length> 300){ %>
+                            <p
+                                style=" text-align: center; padding-left: 30px; padding-right: 30px; padding-top: 10px; padding-bottom: 10px;">
+                                <%=blogs[i].content_of_blog.substring(0,300) + "......." %><a
+                                        href="/post/<%=blogs[i].title_of_blog%>">Read More</a>
+                            </p>
+                            <% }else{ %>
+                                <p
+                                    style=" text-align: center; padding-left: 30px; padding-right: 30px; padding-top: 10px; padding-bottom: 10px;">
+                                    <%=blogs[i].content_of_blog%>
+                                </p>
+                                <% }%>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+        <% } %>
+
+
+            <%- include("partials/footer"); -%>

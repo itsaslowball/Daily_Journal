@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+
+<form action = "/compose" method="post">
+    <!-- <div class="form-group">
+        <textarea class="form-control"  rows="6" cols="30" name = "content"></textarea>
+    </div> -->
+    <label for="w3review">Write Your blog</label><br>
+    <textarea id="w3review" rows="1" cols="70" name = "title" placeholder="Title"></textarea><br>
+
+    <textarea id="w3review" rows="8" cols="70" name = "content"></textarea><br>
+
+    <button type="submit" class="btn btn-primary" name = "publish" >Publish</button>
+
+</form>
+
+<%- include("partials/footer"); -%>
